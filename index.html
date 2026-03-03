@@ -106,7 +106,7 @@
         </div>
     </section>
 
-    <a href="https://wa.me/263773111886?text=Hi%20Top%20Villa%20Lodge,%20I'd%20like%20to%20inquire%20about%20a%20room." 
+    <a href="https://wa.me/263776844533?text=Hi%20Top%20Villa%20Lodge,%20I'd%20like%20to%20inquire%20about%20a%20room." 
        class="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center gap-2">
         <span class="font-bold hidden md:inline">Chat with Us</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.164 1.238 8.407 3.483 2.244 2.244 3.482 5.232 3.482 8.405 0 6.556-5.332 11.888-11.888 11.888-2.004 0-3.973-.504-5.713-1.464l-6.277 1.687zm6.75-3.551c1.511.897 3.013 1.348 4.662 1.348 5.176 0 9.388-4.212 9.388-9.388 0-2.507-.978-4.864-2.753-6.64-1.775-1.775-4.132-2.754-6.635-2.754-5.176 0-9.388 4.212-9.388 9.388 0 1.746.483 3.336 1.393 4.609l-.95 3.469 3.683-.972z"/></svg>
@@ -117,22 +117,44 @@
             document.getElementById('booking-bar').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function handleCheckAvailability() {
-            const checkin = document.getElementById('checkin').value;
-            const checkout = document.getElementById('checkout').value;
-            const room = document.getElementById('roomType').value;
+      async function handleCheckAvailability() {
+    const checkin = document.getElementById('checkin').value;
+    const checkout = document.getElementById('checkout').value;
+    const room = document.getElementById('roomType').value;
+    
+    // For the sheet, we need a name. You can add an input field for this 
+    // or just use 'Website Inquiry' for now.
+    const guestName = "Make a Booking"; 
 
-            if(!checkin || !checkout) {
-                alert("Please select dates to check availability.");
-                return;
-            }
+    if(!checkin || !checkout) {
+        alert("Please select dates to check availability.");
+        return;
+    }
 
-            // This is where we trigger the WhatsApp logic we built earlier
-            const message = `Hi Top Villa Lodge! I am checking availability for a ${room} from ${checkin} to ${checkout}.`;
-            const whatsappUrl = `https://wa.me/263773111886?text=${encodeURIComponent(message)}`;
-            
-            window.open(whatsappUrl, '_blank');
-        }
+    const bookingData = {
+        name: guestName,
+        room: room,
+        checkin: checkin,
+        checkout: checkout
+    };
+
+    // --- NEW: Save to Google Sheets ---
+    try {
+        await fetch('https://script.google.com/macros/s/AKfycbxYxRtOJ1vsuL1tZlmp8vhQK7ZzanpvEFmk-sjBlJp-PnUQJ3bs8C0JbbuNCQntPAB0ew/exec', {
+            method: 'POST',
+            mode: 'no-cors', // Important for Google Apps Script
+            body: JSON.stringify(bookingData)
+        });
+        console.log("Saved to owner calendar.");
+    } catch (error) {
+        console.error("Error saving to sheet:", error);
+    }
+
+    // --- Existing: Open WhatsApp ---
+    const message = `Hi Top Villa Lodge! I am checking availability for a ${room} from ${checkin} to ${checkout}.`;
+    const whatsappUrl = `https://wa.me/263776844533?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+}
     </script>
 </body>
 </html>

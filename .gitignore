@@ -1,0 +1,32 @@
+# --- Python Environment ---
+venv/
+env/
+.env
+bin/
+lib/
+include/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Streamlit & Local Secrets ---
+.streamlit/
+# If you are using secrets.toml for your Google Service Account, 
+# it must stay in .gitignore to protect your credentials.
+secrets.toml
+
+# --- Data & Backups ---
+# Ignore local CSV test data if you want it to remain private
+bookings.csv
+*.log
+*.sqlite
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+
+# --- Web & Build ---
+node_modules/
+.netlify/
+dist/
+build/
