@@ -204,53 +204,35 @@
           .scrollIntoView({ behavior: "smooth" });
       }
 
-      async function handleCheckAvailability() {
-        const checkin = document.getElementById("checkin").value;
-        const checkout = document.getElementById("checkout").value;
-        const room = document.getElementById("roomType").value;
+   async function handleCheckAvailability() {
+    const checkin = document.getElementById('checkin').value;
+    const checkout = document.getElementById('checkout').value;
+    const room = document.getElementById('roomType').value;
+    
+    if(!checkin || !checkout) {
+        alert("Please select dates.");
+        return;
+    }
 
-        if (!checkin || !checkout) {
-          alert("Please select dates to check availability.");
-          return;
-        }
+    const guestName = prompt("Please enter your name:", "Guest");
+    if (guestName === null) return;
 
-        // --- NEW: Ask for the guest's name ---
-        const guestName = prompt(
-          "Please enter your name to check availability:",
-          "Guest",
-        );
+    // Construct the URL with parameters
+    const baseUrl = 'https://script.google.com/macros/s/AKfycbw36zsVJRkFAIle7c7PVClzwouSHn0OfmEDCSi7gk8hI1Fx0RWMFf6AKvDmbDdcY6GgKQ/exec';
+    const finalUrl = `${baseUrl}?name=${encodeURIComponent(guestName)}&room=${encodeURIComponent(room)}&checkin=${checkin}&checkout=${checkout}`;
 
-        // If they hit cancel, stop the process
-        if (guestName === null) return;
+    // Simple GET request
+    try {
+        fetch(finalUrl, { mode: 'no-cors' }); 
+        console.log("Data pinged to Google Sheets.");
+    } catch (error) {
+        console.error("Sync error:", error);
+    }
 
-        const bookingData = {
-          name: guestName,
-          room: room,
-          checkin: checkin,
-          checkout: checkout,
-        };
-
-        // --- Save to Google Sheets ---
-        try {
-          await fetch(
-            "https://script.google.com/macros/s/AKfycbxYxRtOJ1vsuL1tZlmp8vhQK7ZzanpvEFmk-sjBlJp-PnUQJ3bs8C0JbbuNCQntPAB0ew/exec",
-            {
-              method: "POST",
-              mode: "no-cors",
-              body: JSON.stringify(bookingData),
-            },
-          );
-          console.log("Saved to owner calendar.");
-        } catch (error) {
-          console.error("Error saving to sheet:", error);
-        }
-
-        // --- Open WhatsApp ---
-        // Updated message to include the guest's name
-        const message = `Hi Top Villa Lodge! I am ${guestName}. I'm checking availability for a ${room} from ${checkin} to ${checkout}.`;
-        const whatsappUrl = `https://wa.me/263776844533?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, "_blank");
-      }
-    </script>
+    // Open WhatsApp as usual
+    const message = `Hi Top Villa Lodge! I am ${guestName}. I'm checking availability for a ${room} from ${checkin} to ${checkout}.`;
+    window.open(`https://wa.me/263776844533?text=${encodeURIComponent(message)}`, '_blank');
+}
+   </script>
   </body>
 </html>

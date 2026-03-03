@@ -8,6 +8,7 @@ include/
 __pycache__/
 *.py[cod]
 *$py.class
+top-villa-lodge-b071e38b2e5f.json
 
 # --- Streamlit & Local Secrets ---
 .streamlit/

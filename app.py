@@ -1,36 +1,13 @@
 import streamlit as st
-from streamlit_calendar import calendar
+from streamlit_gsheets import GSheetsConnection
 
-st.title("🏰 Top Villa Lodge Booking Manager")
+# This uses the secrets you put in .streamlit/secrets.toml
+conn = st.connection("gsheets", type=GSheetsConnection)
 
-# 1. Define your bookings as 'events'
-calendar_events = [
-    {
-        "title": "Tsungie - Deluxe Suite",
-        "start": "2026-03-05",
-        "end": "2026-03-10",
-        "color": "#D4AF37", # Your brand gold
-    },
-    {
-        "title": "Pending: John Doe - Standard",
-        "start": "2026-03-07",
-        "end": "2026-03-09",
-        "color": "#1a1a1a",
-    }
-]
-
-# 2. Configure the Calendar (Month, Week, Day views)
-calendar_options = {
-    "headerToolbar": {
-        "left": "today prev,next",
-        "center": "title",
-        "right": "dayGridMonth,timeGridWeek,timeGridDay",
-    },
-    "initialView": "dayGridMonth",
-    "selectable": True,
-}
-
-# 3. Display it
-state = calendar(events=calendar_events, options=calendar_options)
-
-st.write("Selected Event Data:", state)
+try:
+    # Try to read the first 5 rows
+    df = conn.read(worksheet="Sheet1", ttl=0) # ttl=0 forces a fresh look
+    st.write("Connection Successful! Here is the data:")
+    st.dataframe(df)
+except Exception as e:
+    st.error(f"Connection Failed: {e}")
