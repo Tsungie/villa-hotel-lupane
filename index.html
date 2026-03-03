@@ -1,160 +1,256 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Top Villa Lodge | Luxury Retreat in Lupane</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, .font-serif { font-family: 'Playfair Display', serif; }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      .font-serif {
+        font-family: "Playfair Display", serif;
+      }
 
-       .hero-gradient { 
+      .hero-gradient {
         /* Increased overlay from 0.5 to 0.65 for better contrast against the white bedding */
-        background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
-                    url('TopVilla-Room-Deluxe-1.jpg'); 
-        background-size: cover; 
-        background-position: center; 
-    }
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+          url("TopVilla-Room-Deluxe-1.jpg");
+        background-size: cover;
+        background-position: center;
+      }
 
-    .text-glow {
+      .text-glow {
         /* Subtle shadow to help text pop on busy backgrounds */
-        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-    }   </style>
-</head>
-<body class="bg-[#fcfcfc] text-[#1a1a1a]">
-
-<nav class="fixed w-full z-50 bg-[#0f0f0f] border-b border-[#D4AF37]/30 px-6 py-4 flex justify-between items-center shadow-2xl">
-    <div class="text-2xl font-serif font-bold tracking-tighter text-[#D4AF37]">
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body class="bg-[#fcfcfc] text-[#1a1a1a]">
+    <nav
+      class="fixed w-full z-50 bg-[#0f0f0f] border-b border-[#D4AF37]/30 px-6 py-4 flex justify-between items-center shadow-2xl"
+    >
+      <div
+        class="text-2xl font-serif font-bold tracking-tighter text-[#D4AF37]"
+      >
         TOP VILLA <span class="text-white">LODGE</span>
-    </div>
+      </div>
 
-    <div class="hidden md:flex space-x-10 font-bold text-[11px] uppercase tracking-[0.2em] text-gray-200">
-        <a href="#" class="hover:text-[#D4AF37] transition-colors duration-300">Rooms</a>
-        <a href="#" class="hover:text-[#D4AF37] transition-colors duration-300">Dining</a>
-        <a href="#" class="hover:text-[#D4AF37] transition-colors duration-300">Lupane Guide</a>
-        <a href="#" class="hover:text-[#D4AF37] transition-colors duration-300">Contact</a>
-    </div>
+      <div
+        class="hidden md:flex space-x-10 font-bold text-[11px] uppercase tracking-[0.2em] text-gray-200"
+      >
+        <a href="#" class="hover:text-[#D4AF37] transition-colors duration-300"
+          >Rooms</a
+        >
+        <a href="#" class="hover:text-[#D4AF37] transition-colors duration-300"
+          >Dining</a
+        >
+        <a href="#" class="hover:text-[#D4AF37] transition-colors duration-300"
+          >Lupane Guide</a
+        >
+        <a href="#" class="hover:text-[#D4AF37] transition-colors duration-300"
+          >Contact</a
+        >
+      </div>
 
-    <button onclick="scrollToBooking()" class="bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-black px-8 py-2.5 rounded-full text-[11px] font-black hover:scale-105 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300 uppercase tracking-widest">
+      <button
+        onclick="scrollToBooking()"
+        class="bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-black px-8 py-2.5 rounded-full text-[11px] font-black hover:scale-105 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] transition-all duration-300 uppercase tracking-widest"
+      >
         BOOK NOW
-    </button>
-</nav>
+      </button>
+    </nav>
 
-    <header class="relative h-screen flex items-center justify-center text-center text-white hero-gradient px-4">
-       <div class="max-w-4xl">
-    <span class="uppercase tracking-[0.3em] text-sm mb-4 block font-semibold text-[#c5a059] text-glow">
-        Experience True Serenity
-    </span>
-    <h1 class="text-5xl md:text-7xl mb-6 leading-tight text-glow">
-        The Comfort That Defines Relaxation
-    </h1>
-    
-    <p class="text-lg md:text-xl font-medium mb-10 text-white leading-relaxed max-w-2xl mx-auto text-glow">
-        Nestled in the heart of Lupane, offering a luxury sanctuary for travelers on the Victoria Falls highway.
-    </p>
-    
-    <div class="inline-flex items-center gap-2 bg-black/60 backdrop-blur-md border border-white/30 px-6 py-3 rounded-full">
-        <span class="text-yellow-400">⚡</span>
-        <span class="text-sm font-bold uppercase tracking-widest text-white">
-            Guaranteed 24/7 Power Supply
+    <header
+      class="relative h-screen flex items-center justify-center text-center text-white hero-gradient px-4"
+    >
+      <div class="max-w-4xl">
+        <span
+          class="uppercase tracking-[0.3em] text-sm mb-4 block font-semibold text-[#c5a059] text-glow"
+        >
+          Experience True Serenity
         </span>
-    </div>
-</div>
+        <h1 class="text-5xl md:text-7xl mb-6 leading-tight text-glow">
+          The Comfort That Defines Relaxation
+        </h1>
+
+        <p
+          class="text-lg md:text-xl font-medium mb-10 text-white leading-relaxed max-w-2xl mx-auto text-glow"
+        >
+          Nestled in the heart of Lupane, offering a luxury sanctuary for
+          travelers on the Victoria Falls highway.
+        </p>
+
+        <div
+          class="inline-flex items-center gap-2 bg-black/60 backdrop-blur-md border border-white/30 px-6 py-3 rounded-full"
+        >
+          <span class="text-yellow-400">⚡</span>
+          <span class="text-sm font-bold uppercase tracking-widest text-white">
+            Guaranteed 24/7 Power Supply
+          </span>
+        </div>
+      </div>
     </header>
 
-    <section id="booking-bar" class="relative z-20 max-w-6xl mx-auto -mt-16 px-4">
-        <div class="bg-white shadow-2xl rounded-2xl p-6 md:p-8 grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
-            <div>
-                <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Check-In</label>
-                <input type="date" id="checkin" class="w-full border-b border-gray-200 py-2 focus:outline-none focus:border-[#c5a059] text-gray-700">
-            </div>
-            <div>
-                <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Check-Out</label>
-                <input type="date" id="checkout" class="w-full border-b border-gray-200 py-2 focus:outline-none focus:border-[#c5a059] text-gray-700">
-            </div>
-            <div>
-                <label class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Room Type</label>
-                <select id="roomType" class="w-full border-b border-gray-200 py-2 focus:outline-none focus:border-[#c5a059] text-gray-700 bg-transparent">
-                    <option>Deluxe Suite</option>
-                    <option>Standard En-suite</option>
-                </select>
-            </div>
-            <button onclick="handleCheckAvailability()" class="w-full bg-[#1a1a1a] text-white py-4 rounded-xl font-bold hover:bg-black transition-all transform hover:scale-[1.02]">
-                Check Availability
-            </button>
+    <section
+      id="booking-bar"
+      class="relative z-20 max-w-6xl mx-auto -mt-16 px-4"
+    >
+      <div
+        class="bg-white shadow-2xl rounded-2xl p-6 md:p-8 grid grid-cols-1 md:grid-cols-4 gap-6 items-end"
+      >
+        <div>
+          <label
+            class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2"
+            >Check-In</label
+          >
+          <input
+            type="date"
+            id="checkin"
+            class="w-full border-b border-gray-200 py-2 focus:outline-none focus:border-[#c5a059] text-gray-700"
+          />
         </div>
+        <div>
+          <label
+            class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2"
+            >Check-Out</label
+          >
+          <input
+            type="date"
+            id="checkout"
+            class="w-full border-b border-gray-200 py-2 focus:outline-none focus:border-[#c5a059] text-gray-700"
+          />
+        </div>
+        <div>
+          <label
+            class="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2"
+            >Room Type</label
+          >
+          <select
+            id="roomType"
+            class="w-full border-b border-gray-200 py-2 focus:outline-none focus:border-[#c5a059] text-gray-700 bg-transparent"
+          >
+            <option>Deluxe Suite</option>
+            <option>Standard En-suite</option>
+          </select>
+        </div>
+        <button
+          onclick="handleCheckAvailability()"
+          class="w-full bg-[#1a1a1a] text-white py-4 rounded-xl font-bold hover:bg-black transition-all transform hover:scale-[1.02]"
+        >
+          Check Availability
+        </button>
+      </div>
     </section>
 
-    <section class="py-20 px-6 max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        <div>
-            <div class="text-3xl font-serif text-[#c5a059] font-bold">172km</div>
-            <div class="text-xs uppercase tracking-widest text-gray-500 mt-2">From Bulawayo</div>
+    <section
+      class="py-20 px-6 max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+    >
+      <div>
+        <div class="text-3xl font-serif text-[#c5a059] font-bold">172km</div>
+        <div class="text-xs uppercase tracking-widest text-gray-500 mt-2">
+          From Bulawayo
         </div>
-        <div>
-            <div class="text-3xl font-serif text-[#c5a059] font-bold">264km</div>
-            <div class="text-xs uppercase tracking-widest text-gray-500 mt-2">From Victoria Falls</div>
+      </div>
+      <div>
+        <div class="text-3xl font-serif text-[#c5a059] font-bold">264km</div>
+        <div class="text-xs uppercase tracking-widest text-gray-500 mt-2">
+          From Victoria Falls
         </div>
-        <div>
-            <div class="text-3xl font-serif text-[#c5a059] font-bold">7 min</div>
-            <div class="text-xs uppercase tracking-widest text-gray-500 mt-2">Off VF Highway</div>
+      </div>
+      <div>
+        <div class="text-3xl font-serif text-[#c5a059] font-bold">7 min</div>
+        <div class="text-xs uppercase tracking-widest text-gray-500 mt-2">
+          Off VF Highway
         </div>
-        <div>
-            <div class="text-3xl font-serif text-[#c5a059] font-bold">Secure</div>
-            <div class="text-xs uppercase tracking-widest text-gray-500 mt-2">Guarded Premises</div>
+      </div>
+      <div>
+        <div class="text-3xl font-serif text-[#c5a059] font-bold">Secure</div>
+        <div class="text-xs uppercase tracking-widest text-gray-500 mt-2">
+          Guarded Premises
         </div>
+      </div>
     </section>
 
-    <a href="https://wa.me/263776844533?text=Hi%20Top%20Villa%20Lodge,%20I'd%20like%20to%20inquire%20about%20a%20room." 
-       class="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center gap-2">
-        <span class="font-bold hidden md:inline">Chat with Us</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.164 1.238 8.407 3.483 2.244 2.244 3.482 5.232 3.482 8.405 0 6.556-5.332 11.888-11.888 11.888-2.004 0-3.973-.504-5.713-1.464l-6.277 1.687zm6.75-3.551c1.511.897 3.013 1.348 4.662 1.348 5.176 0 9.388-4.212 9.388-9.388 0-2.507-.978-4.864-2.753-6.64-1.775-1.775-4.132-2.754-6.635-2.754-5.176 0-9.388 4.212-9.388 9.388 0 1.746.483 3.336 1.393 4.609l-.95 3.469 3.683-.972z"/></svg>
+    <a
+      href="https://wa.me/263776844533?text=Hi%20Top%20Villa%20Lodge,%20I'd%20like%20to%20inquire%20about%20a%20room."
+      class="fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center gap-2"
+    >
+      <span class="font-bold hidden md:inline">Chat with Us </span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.888 11.888-11.888 3.176 0 6.164 1.238 8.407 3.483 2.244 2.244 3.482 5.232 3.482 8.405 0 6.556-5.332 11.888-11.888 11.888-2.004 0-3.973-.504-5.713-1.464l-6.277 1.687zm6.75-3.551c1.511.897 3.013 1.348 4.662 1.348 5.176 0 9.388-4.212 9.388-9.388 0-2.507-.978-4.864-2.753-6.64-1.775-1.775-4.132-2.754-6.635-2.754-5.176 0-9.388 4.212-9.388 9.388 0 1.746.483 3.336 1.393 4.609l-.95 3.469 3.683-.972z"
+        />
+      </svg>
     </a>
-
     <script>
-        function scrollToBooking() {
-            document.getElementById('booking-bar').scrollIntoView({ behavior: 'smooth' });
-        }
+      function scrollToBooking() {
+        document
+          .getElementById("booking-bar")
+          .scrollIntoView({ behavior: "smooth" });
+      }
 
       async function handleCheckAvailability() {
-    const checkin = document.getElementById('checkin').value;
-    const checkout = document.getElementById('checkout').value;
-    const room = document.getElementById('roomType').value;
-    
-    // For the sheet, we need a name. You can add an input field for this 
-    // or just use 'Website Inquiry' for now.
-    const guestName = "Make a Booking"; 
+        const checkin = document.getElementById("checkin").value;
+        const checkout = document.getElementById("checkout").value;
+        const room = document.getElementById("roomType").value;
 
-    if(!checkin || !checkout) {
-        alert("Please select dates to check availability.");
-        return;
-    }
+        if (!checkin || !checkout) {
+          alert("Please select dates to check availability.");
+          return;
+        }
 
-    const bookingData = {
-        name: guestName,
-        room: room,
-        checkin: checkin,
-        checkout: checkout
-    };
+        // --- NEW: Ask for the guest's name ---
+        const guestName = prompt(
+          "Please enter your name to check availability:",
+          "Guest",
+        );
 
-    // --- NEW: Save to Google Sheets ---
-    try {
-        await fetch('https://script.google.com/macros/s/AKfycbxYxRtOJ1vsuL1tZlmp8vhQK7ZzanpvEFmk-sjBlJp-PnUQJ3bs8C0JbbuNCQntPAB0ew/exec', {
-            method: 'POST',
-            mode: 'no-cors', // Important for Google Apps Script
-            body: JSON.stringify(bookingData)
-        });
-        console.log("Saved to owner calendar.");
-    } catch (error) {
-        console.error("Error saving to sheet:", error);
-    }
+        // If they hit cancel, stop the process
+        if (guestName === null) return;
 
-    // --- Existing: Open WhatsApp ---
-    const message = `Hi Top Villa Lodge! I am checking availability for a ${room} from ${checkin} to ${checkout}.`;
-    const whatsappUrl = `https://wa.me/263776844533?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-}
+        const bookingData = {
+          name: guestName,
+          room: room,
+          checkin: checkin,
+          checkout: checkout,
+        };
+
+        // --- Save to Google Sheets ---
+        try {
+          await fetch(
+            "https://script.google.com/macros/s/AKfycbxYxRtOJ1vsuL1tZlmp8vhQK7ZzanpvEFmk-sjBlJp-PnUQJ3bs8C0JbbuNCQntPAB0ew/exec",
+            {
+              method: "POST",
+              mode: "no-cors",
+              body: JSON.stringify(bookingData),
+            },
+          );
+          console.log("Saved to owner calendar.");
+        } catch (error) {
+          console.error("Error saving to sheet:", error);
+        }
+
+        // --- Open WhatsApp ---
+        // Updated message to include the guest's name
+        const message = `Hi Top Villa Lodge! I am ${guestName}. I'm checking availability for a ${room} from ${checkin} to ${checkout}.`;
+        const whatsappUrl = `https://wa.me/263776844533?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, "_blank");
+      }
     </script>
-</body>
+  </body>
 </html>
