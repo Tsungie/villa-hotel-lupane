@@ -8,13 +8,13 @@ include/
 __pycache__/
 *.py[cod]
 *$py.class
-top-villa-lodge-b071e38b2e5f.json
+#top-villa-lodge-b071e38b2e5f.json
 
 # --- Streamlit & Local Secrets ---
-.streamlit/
+#.streamlit/
 # If you are using secrets.toml for your Google Service Account, 
 # it must stay in .gitignore to protect your credentials.
-secrets.toml
+#secrets.toml
 
 # --- Data & Backups ---
 # Ignore local CSV test data if you want it to remain private
